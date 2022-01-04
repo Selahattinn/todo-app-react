@@ -3,8 +3,8 @@ import { API } from '../api';
 import { like, regex } from '@pact-foundation/pact/src/dsl/matchers';
 
 const mockProvider = new Pact({
-  consumer: 'pactflow-example-consumer',
-  provider: process.env.PACT_PROVIDER ? process.env.PACT_PROVIDER : 'pactflow-example-provider',
+  consumer: 'react-consumer',
+  provider: process.env.PACT_PROVIDER ? process.env.PACT_PROVIDER : 'go-provider',
 });
 
 describe('API Pact test', () => {

@@ -1,9 +1,9 @@
 {
   "consumer": {
-    "name": "pactflow-example-consumer"
+    "name": "react-consumer"
   },
   "provider": {
-    "name": "pactflow-example-provider"
+    "name": "go-provider"
   },
   "interactions": [
     {

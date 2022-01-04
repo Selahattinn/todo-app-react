@@ -5,11 +5,9 @@
 # Default to the read only token - the read/write token will be present on Travis CI.
 # It's set as a secure environment variable in the .travis.yml file
 GITHUB_ORG="pactflow"
-PACTICIPANT := "pactflow-example-consumer"
+PACTICIPANT := "react-consumer"
 GITHUB_WEBHOOK_UUID := "04510dc1-7f0a-4ed2-997d-114bfa86f8ad"
-PACT_CHANGED_WEBHOOK_UUID := "8e49caaa-0498-4cc1-9368-325de0812c8a"
-PACT_CLI="docker run --rm -v ${PWD}:${PWD} -e PACT_BROKER_BASE_URL -e PACT_BROKER_TOKEN pactfoundation/pact-cli"
-
+PACT_CLI="docker run --rm -v ${PWD}:${PWD} pactfoundation/pact-cli"
 # Only deploy from master
 ifeq ($(GIT_BRANCH),master)
 	DEPLOY_TARGET=deploy
@@ -37,7 +35,7 @@ fake_ci: .env
 
 publish_pacts: .env
 	@echo "\n========== STAGE: publish pacts ==========\n"
-	@"${PACT_CLI}" publish ${PWD}/pacts --consumer-app-version ${GIT_COMMIT} --tag ${GIT_BRANCH}
+	@"${PACT_CLI}" publish ${PWD}/pacts -a  ${GIT_COMMIT} --tag ${GIT_BRANCH} -b https://selahattinceylan.pactflow.io -k MGpB-0-JCU5yM8i3eUdA0Q 
 
 ## =====================
 ## Build/test tasks
@@ -61,7 +59,7 @@ no_deploy:
 
 can_i_deploy: .env
 	@echo "\n========== STAGE: can-i-deploy? ==========\n"
-	@"${PACT_CLI}" broker can-i-deploy \
+	@"${PACT_CLI}"  broker can-i-deploy  -b https://selahattinceylan.pactflow.io -k MGpB-0-JCU5yM8i3eUdA0Q \
 	  --pacticipant ${PACTICIPANT} \
 	  --version ${GIT_COMMIT} \
 	  --to-environment production \
