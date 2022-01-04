@@ -26,7 +26,7 @@ ci: test publish_pacts can_i_deploy $(DEPLOY_TARGET)
 # Run the ci target from a developer machine with the environment variables
 # set as if it was on CI.
 # Use this for quick feedback when playing around with your workflows.
-fake_ci: .env
+do_ci: .env
 	@CI=true \
 	GIT_COMMIT=`git rev-parse --short HEAD`+`date +%s` \
 	GIT_BRANCH=`git rev-parse --abbrev-ref HEAD` \
