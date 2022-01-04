@@ -1,5 +1,5 @@
-I, [2022-01-05T00:30:53.251563 #31203]  INFO -- : Registered expected interaction GET /jobs
-D, [2022-01-05T00:30:53.251881 #31203] DEBUG -- : {
+I, [2022-01-05T00:56:03.237431 #2074]  INFO -- : Registered expected interaction GET /jobs
+D, [2022-01-05T00:56:03.237808 #2074] DEBUG -- : {
   "description": "a request to get jobs",
   "providerState": "a request to get jobs",
   "request": {
@@ -37,21 +37,21 @@ D, [2022-01-05T00:30:53.251881 #31203] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2022-01-05T00:30:53.268423 #31203]  INFO -- : Received request GET /jobs
-D, [2022-01-05T00:30:53.268766 #31203] DEBUG -- : {
+I, [2022-01-05T00:56:03.250401 #2074]  INFO -- : Received request GET /jobs
+D, [2022-01-05T00:56:03.250648 #2074] DEBUG -- : {
   "path": "/jobs",
   "query": "",
   "method": "get",
   "headers": {
     "Accept": "application/json, text/plain, */*",
     "User-Agent": "axios/0.24.0",
-    "Host": "127.0.0.1:34629",
+    "Host": "127.0.0.1:44251",
     "Connection": "close",
     "Version": "HTTP/1.1"
   }
 }
-I, [2022-01-05T00:30:53.269072 #31203]  INFO -- : Found matching response for GET /jobs
-D, [2022-01-05T00:30:53.269363 #31203] DEBUG -- : {
+I, [2022-01-05T00:56:03.251078 #2074]  INFO -- : Found matching response for GET /jobs
+D, [2022-01-05T00:56:03.251293 #2074] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": {
@@ -80,6 +80,6 @@ D, [2022-01-05T00:30:53.269363 #31203] DEBUG -- : {
     ]
   }
 }
-I, [2022-01-05T00:30:53.280750 #31203]  INFO -- : Verifying - interactions matched
-I, [2022-01-05T00:30:53.285508 #31203]  INFO -- : Cleared interactions
-I, [2022-01-05T00:30:53.291266 #31203]  INFO -- : Writing pact for pactflow-example-provider to /home/selo/work/todo-app-react/pacts/pactflow-example-consumer-pactflow-example-provider.json
+I, [2022-01-05T00:56:03.258568 #2074]  INFO -- : Verifying - interactions matched
+I, [2022-01-05T00:56:03.264038 #2074]  INFO -- : Cleared interactions
+I, [2022-01-05T00:56:03.270515 #2074]  INFO -- : Writing pact for pactflow-example-provider to /home/selo/work/todo-app-react/pacts/pactflow-example-consumer-pactflow-example-provider.json
