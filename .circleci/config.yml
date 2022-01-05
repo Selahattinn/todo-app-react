@@ -92,15 +92,6 @@ jobs:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
             - /caches/todo-app-react.tar
-      - deploy:
-          name: Push application Docker image
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              login="$(aws ecr get-login)"
-              ${login}
-              docker tag app "${ECR_ENDPOINT}/todo-app-react:${CIRCLE_SHA1}"
-              docker push "${ECR_ENDPOINT}/todo-app-react:${CIRCLE_SHA1}"
-            fi
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
