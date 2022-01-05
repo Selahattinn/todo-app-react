@@ -80,7 +80,7 @@ workflows:
   test-workflow:
     jobs:
       - test
-  docekrize-workflow:
+  dockerize-workflow:
     jobs:
-      - docekrize
+      - dockerize
 
