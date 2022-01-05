@@ -11,7 +11,7 @@
       "providerState": "a request to get jobs",
       "request": {
         "method": "GET",
-        "path": "/jobs"
+        "path": "/api/v1/jobs"
       },
       "response": {
         "status": 200,
@@ -20,14 +20,44 @@
         },
         "body": [
           {
-            "id": "1",
+            "id": 0,
             "body": "Test"
           },
           {
-            "id": "2",
+            "id": 1,
             "body": "Test"
           }
         ],
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json;?.*"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request to post a jobs",
+      "providerState": "a request to post a jobs",
+      "request": {
+        "method": "POST",
+        "path": "/api/v1/jobs",
+        "body": {
+          "body": "Test for post job"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": 3,
+          "body": ""
+        },
         "matchingRules": {
           "$.headers.Content-Type": {
             "match": "regex",

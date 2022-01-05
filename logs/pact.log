@@ -1,10 +1,10 @@
-I, [2022-01-05T14:24:11.426425 #5428]  INFO -- : Registered expected interaction GET /jobs
-D, [2022-01-05T14:24:11.426765 #5428] DEBUG -- : {
+I, [2022-01-05T20:42:43.811948 #23428]  INFO -- : Registered expected interaction GET /api/v1/jobs
+D, [2022-01-05T20:42:43.812419 #23428] DEBUG -- : {
   "description": "a request to get jobs",
   "providerState": "a request to get jobs",
   "request": {
     "method": "GET",
-    "path": "/jobs"
+    "path": "/api/v1/jobs"
   },
   "response": {
     "status": 200,
@@ -25,11 +25,11 @@ D, [2022-01-05T14:24:11.426765 #5428] DEBUG -- : {
       "json_class": "Pact::SomethingLike",
       "contents": [
         {
-          "id": "1",
+          "id": 0,
           "body": "Test"
         },
         {
-          "id": "2",
+          "id": 1,
           "body": "Test"
         }
       ]
@@ -37,21 +37,21 @@ D, [2022-01-05T14:24:11.426765 #5428] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2022-01-05T14:24:11.440249 #5428]  INFO -- : Received request GET /jobs
-D, [2022-01-05T14:24:11.440419 #5428] DEBUG -- : {
-  "path": "/jobs",
+I, [2022-01-05T20:42:43.823239 #23428]  INFO -- : Received request GET /api/v1/jobs
+D, [2022-01-05T20:42:43.823404 #23428] DEBUG -- : {
+  "path": "/api/v1/jobs",
   "query": "",
   "method": "get",
   "headers": {
     "Accept": "application/json, text/plain, */*",
     "User-Agent": "axios/0.24.0",
-    "Host": "127.0.0.1:39801",
+    "Host": "127.0.0.1:36495",
     "Connection": "close",
     "Version": "HTTP/1.1"
   }
 }
-I, [2022-01-05T14:24:11.440867 #5428]  INFO -- : Found matching response for GET /jobs
-D, [2022-01-05T14:24:11.441104 #5428] DEBUG -- : {
+I, [2022-01-05T20:42:43.823796 #23428]  INFO -- : Found matching response for GET /api/v1/jobs
+D, [2022-01-05T20:42:43.824009 #23428] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": {
@@ -70,16 +70,96 @@ D, [2022-01-05T14:24:11.441104 #5428] DEBUG -- : {
     "json_class": "Pact::SomethingLike",
     "contents": [
       {
-        "id": "1",
+        "id": 0,
         "body": "Test"
       },
       {
-        "id": "2",
+        "id": 1,
         "body": "Test"
       }
     ]
   }
 }
-I, [2022-01-05T14:24:11.449579 #5428]  INFO -- : Verifying - interactions matched
-I, [2022-01-05T14:24:11.454047 #5428]  INFO -- : Cleared interactions
-I, [2022-01-05T14:24:11.462548 #5428]  INFO -- : Writing pact for go-provider to /home/selo/work/todo-app-react/pacts/react-consumer-go-provider.json
+I, [2022-01-05T20:42:43.830326 #23428]  INFO -- : Verifying - interactions matched
+I, [2022-01-05T20:42:43.834172 #23428]  INFO -- : Cleared interactions
+I, [2022-01-05T20:42:43.839845 #23428]  INFO -- : Registered expected interaction POST /api/v1/jobs
+D, [2022-01-05T20:42:43.840081 #23428] DEBUG -- : {
+  "description": "a request to post a jobs",
+  "providerState": "a request to post a jobs",
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/jobs",
+    "body": {
+      "body": "Test for post job"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application/json;?.*"
+          }
+        }
+      }
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "id": 3,
+        "body": ""
+      }
+    }
+  },
+  "metadata": null
+}
+I, [2022-01-05T20:42:43.844722 #23428]  INFO -- : Received request POST /api/v1/jobs
+D, [2022-01-05T20:42:43.844935 #23428] DEBUG -- : {
+  "path": "/api/v1/jobs",
+  "query": "",
+  "method": "post",
+  "body": {
+    "body": "Test for post job"
+  },
+  "headers": {
+    "Content-Length": "28",
+    "Content-Type": "application/json",
+    "Accept": "application/json, text/plain, */*",
+    "User-Agent": "axios/0.24.0",
+    "Host": "127.0.0.1:36495",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2022-01-05T20:42:43.845585 #23428]  INFO -- : Found matching response for POST /api/v1/jobs
+D, [2022-01-05T20:42:43.845856 #23428] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json; charset=utf-8",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application/json;?.*"
+        }
+      }
+    }
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "id": 3,
+      "body": ""
+    }
+  }
+}
+I, [2022-01-05T20:42:43.851253 #23428]  INFO -- : Verifying - interactions matched
+I, [2022-01-05T20:42:43.855161 #23428]  INFO -- : Cleared interactions
+I, [2022-01-05T20:42:43.859380 #23428]  INFO -- : Writing pact for go-provider to /home/selo/work/todo-app-react/pacts/react-consumer-go-provider.json

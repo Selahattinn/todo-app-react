@@ -18,10 +18,17 @@ export class API {
     return `${this.url}${path}`
   }
 
-  async getJobs() {
-    return axios.get(this.withPath("/jobs" ))
+  getJobs() {
+    return axios.get(this.withPath("api/v1/jobs" ))
+    .then(r => r.data);
+  }
+
+  async storeJob(val) {
+    return axios.post(this.withPath("api/v1/jobs"),{
+      body: val.body,
+    })
     .then(r => r.data);
   }
 }
 
-export default new API(process.env.REACT_APP_API_BASE_URL);
+export default new API("http://localhost:8080");
