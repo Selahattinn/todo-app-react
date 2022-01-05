@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen ,fireEvent} from '@testing-library/react';
 import { error } from 'console';
 import Todo from './Todo'
 
@@ -47,5 +47,12 @@ test("When writes an empty input and click add job must seen an alert",()=>{
 });
 
 test("When writes an input and click add job must seen in table ",()=>{
-    throw new error()
+    render(<Todo/>);
+    const input = screen.getByTitle("input-text");
+    fireEvent.change(input, {target: {value: 'Tesj Job'}})
+    const button = screen.getByText("Add");
+    button.click();
+    const job = screen.getByText("Tesj Job");
+    expect(job).toBeTruthy()
+    
 });
