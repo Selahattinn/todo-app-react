@@ -51,7 +51,7 @@ jobs:
           paths:
             - ~/.npm
       - run:
-          name: Run Pact Tests
+          name: Run Unit&Pact Tests
           command: npm run test
 
 # Invoke jobs via workflows
@@ -61,5 +61,7 @@ workflows:
     jobs:
       - build
   test-workflow:
+    requires:
+      - build-workflow
     jobs:
       - test
