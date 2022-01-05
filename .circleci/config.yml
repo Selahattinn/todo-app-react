@@ -53,7 +53,23 @@ jobs:
       - run:
           name: Run Unit&Pact Tests
           command: npm run test
-
+  dockerize:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/node:15.1
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - restore_cache:
+          # See the configuration reference documentation for more details on using restore_cache and save_cache steps
+          # https://circleci.com/docs/2.0/configuration-reference/?section=reference#save_cache
+          keys:
+            - node-deps-v1-{{ .Branch }}-{{checksum "package-lock.json"}}
+      - run:
+          name: dockerize
+          command: docker build -t sample:todo-app-react .
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -64,4 +80,7 @@ workflows:
   test-workflow:
     jobs:
       - test
+  docekrize-workflow:
+    jobs:
+      - docekrize
 
