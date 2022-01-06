@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# todo-app-react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## For The General Project
 
-## Available Scripts
+I learned how to write tests and the logic of tests. I realized that the TDD part should actually be in every project. I have done the parts so far in about 2.5 days. I've read a lot of sources.
 
-In the project directory, you can run:
+Maybe I could have done better if I had time to try a little harder. I am sending the project as it is because there are 2 important works/homework that I have to do.
 
-### `npm start`
+```
+├─ pacts                         //for saving pact files
+├─ public                        //favicon.ico&index.html
+├─ makefile                      //MakeFile 
+└─ src                           //Front codes 
+   ├─ components                 //Todo component and its test 
+                                 // cases 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚡️ Quick start
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Pre-Req
+> npm i
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## For build
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run build
+```
+## For Test
+I wrote the necessary test scenarios. These tests are unit tests and pact tests.
+```bash
+npm run test
+```
+## For test/publis pacts&test
+```bash
+make do_ci
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## CI/CD Pipline
+The ci/cd pipline part is working properly. If I have to explain the part I've done so far, the build,test and dockerize parts are working in multiple workflows.
 
-### `npm run eject`
+#### A few images about pact tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="./images/comment-line-test-success-raect.png"/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./images/pact-success.png"/>
